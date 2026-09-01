@@ -63,3 +63,7 @@ SEO：AI会议助手、智能会议纪要、会议转写、行动项管理、Jav
 ## 会议决策完整度
 
 新增 `POST /api/meetingai/insights/decision-completeness`，检查决策责任人、截止日期、未决议题、转写覆盖和批准记录，输出 `DISTRIBUTE`、`REVIEW` 或 `INCOMPLETE`。
+
+## 企业级会议纪要发布
+
+新增 `POST /api/enterprise/meetingai/minutes-publication`，覆盖告知、保密、转写、决策、行动项、脱敏、权限和异议，返回 `PUBLISH / REVIEW / BLOCKED`。详见 [纪要发布说明](docs/ENTERPRISE_MINUTES_PUBLICATION.md)。
