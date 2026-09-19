@@ -1,0 +1,7 @@
+/* Copyright 2026 上海如静知华信息科技有限公司 · https://www.zhuatech.cn/ */
+package cn.zhuatech.meetingai.service;import org.junit.jupiter.api.Test;import java.time.LocalDate;import java.util.List;import static org.assertj.core.api.Assertions.assertThat;
+class MeetingActionTrackingServiceTest{private final MeetingActionTrackingService s=new MeetingActionTrackingService();private final LocalDate today=LocalDate.of(2026,9,19);
+ @Test void keepsCompleteActionsOnTrack(){var r=s.evaluate(req(new MeetingActionTrackingService.ActionItem("A","张三",today,true,false,true,true)));assertThat(r.decision()).isEqualTo(MeetingActionTrackingService.Decision.ON_TRACK);assertThat(r.completionRatePercent()).isEqualTo(100);}
+ @Test void escalatesOverdueCriticalDependency(){var r=s.evaluate(req(new MeetingActionTrackingService.ActionItem("A","李四",today.minusDays(1),true,true,false,false)));assertThat(r.decision()).isEqualTo(MeetingActionTrackingService.Decision.ESCALATE);assertThat(r.escalations()).hasSize(2);}
+ @Test void blocksMissingOwnerOrEvidence(){var r=s.evaluate(req(new MeetingActionTrackingService.ActionItem("A","",today,false,false,true,false)));assertThat(r.decision()).isEqualTo(MeetingActionTrackingService.Decision.BLOCKED);assertThat(r.blockers()).hasSize(2);}
+ private MeetingActionTrackingService.Request req(MeetingActionTrackingService.ActionItem a){return new MeetingActionTrackingService.Request("M-1",today,List.of(a));}}

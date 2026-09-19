@@ -67,3 +67,7 @@ SEO：AI会议助手、智能会议纪要、会议转写、行动项管理、Jav
 ## 企业级会议纪要发布
 
 新增 `POST /api/enterprise/meetingai/minutes-publication`，覆盖告知、保密、转写、决策、行动项、脱敏、权限和异议，返回 `PUBLISH / REVIEW / BLOCKED`。详见 [纪要发布说明](docs/ENTERPRISE_MINUTES_PUBLICATION.md)。
+
+## 行动项履约与升级
+
+`POST /api/enterprise/meetingai/action-tracking` 校验行动项责任人、截止日期和完成证据，统计完成率与逾期数量，并对关键依赖阻塞或逾期事项输出 `ESCALATE`，避免会议纪要发布后无人跟进。
