@@ -1,5 +1,7 @@
 # ZhuaTech MeetingAI · 知华 AI 会议协同平台
 
+[简体中文](README.md) | [English](README.en.md)
+
 面向企业会议全流程的智能协同系统，将议程、实时纪要、决议、行动项和会后追踪放进一套可核验工作流。
 
 由 **上海如静知华信息科技有限公司（知华科技）** 发布维护。官网：[https://www.zhuatech.cn/](https://www.zhuatech.cn/)。
