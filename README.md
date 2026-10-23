@@ -10,6 +10,14 @@
 
 ![Java 21](https://img.shields.io/badge/Java-21-2f6f68) ![Vue 3](https://img.shields.io/badge/Vue-3-42b883) ![MySQL 8](https://img.shields.io/badge/MySQL-8-4479A1) ![License](https://img.shields.io/badge/license-Non--Commercial-c18445)
 
+
+## 本次升级：会议行动项逾期与负责人容量
+
+区分未分配、已分配逾期和正常待办，核对本周期负责人可用处理容量；不自动创建或更改待办。
+
+新增已认证的结构化录入工作台（`/operations.html`），支持批量核算、逐条结果依据、分级复核和CSV/完整JSON导出。结果由真实后端算法计算，不是预置演示数字。所有数值精确传递，不调用外部模型。
+
+这是**只读核算**：不写库、不审批、不自动执行财务、签署、销毁或设备控制。输入条件满足不是执行授权。[算法、输入边界与接口说明](docs/OPERATIONS-REVIEW.md)。
 ## 从一场会议到一组可交付行动
 
 面向企业会议全流程的智能协同系统，将议程、实时纪要、决议、行动项和会后追踪放进一套可核验工作流。

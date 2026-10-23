@@ -1,0 +1,72 @@
+[
+  {
+    "patch": {},
+    "expected": {
+      "decision": "HOLD",
+      "requiredMinutes": "#600",
+      "capacityGap": "#120"
+    },
+    "error": false
+  },
+  {
+    "patch": {
+      "unassigned": "0",
+      "minutesPerOwner": "150"
+    },
+    "expected": {
+      "decision": "REVIEW"
+    },
+    "error": false
+  },
+  {
+    "patch": {
+      "unassigned": "0",
+      "overdueAssigned": "0",
+      "minutesPerOwner": "150"
+    },
+    "expected": {
+      "decision": "PASS"
+    },
+    "error": false
+  },
+  {
+    "patch": {
+      "openItems": "0",
+      "unassigned": "0",
+      "overdueAssigned": "0"
+    },
+    "expected": {
+      "decision": "PASS",
+      "capacityGap": "#0"
+    },
+    "error": false
+  },
+  {
+    "patch": {
+      "unassigned": "18",
+      "overdueAssigned": "3"
+    },
+    "expected": {},
+    "error": true
+  },
+  {
+    "patch": {
+      "owners": "0"
+    },
+    "expected": {
+      "decision": "HOLD"
+    },
+    "error": false
+  },
+  {
+    "patch": {
+      "minutesPerItem": "0",
+      "unassigned": "0",
+      "overdueAssigned": "0"
+    },
+    "expected": {
+      "decision": "PASS"
+    },
+    "error": false
+  }
+]
