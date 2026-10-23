@@ -1,0 +1,7 @@
+{
+  "patch": {
+    "unassigned": "0",
+    "minutesPerOwner": "150"
+  },
+  "description": "未分配负责人改为0；每人可用分钟改为150"
+}
